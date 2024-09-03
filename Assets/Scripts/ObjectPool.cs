@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// the code is implementing an object pooling system for spawning and managing game objects
 public class ObjectPool : MonoBehaviour
 {
+    // The Pool class is a simple data container that holds two properties
     [System.Serializable]
     public class Pool
     {
@@ -21,7 +23,6 @@ public class ObjectPool : MonoBehaviour
     {
         foreach (Pool pool in pools)
         {
-
             for (int i = 0; i < pool.amount; i++)
             {
                 GameObject obj = Instantiate(pool.ballPrefab);
@@ -31,7 +32,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public void  SpawnObject(Vector2 spawnPos)
+    public void SpawnObject(Vector2 spawnPos)
     {
         GameObject objectToSpawn = objectPool.Dequeue();
         Rigidbody2D rb = objectToSpawn.GetComponent<Rigidbody2D>();

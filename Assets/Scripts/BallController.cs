@@ -19,7 +19,7 @@ public class BallController : MonoBehaviour
 
     private void CheckPosition()
     {
-        if (transform.position.y < - buttomThresholdPosition)
+        if (transform.position.y < -buttomThresholdPosition)
         {
             ReturnToQueue();
         }
@@ -36,7 +36,7 @@ public class BallController : MonoBehaviour
 
     IEnumerator DelayedReturnToQueue()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         ReturnToQueue();
     }
 
